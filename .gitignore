@@ -1,0 +1,8 @@
+.env
+prospector-config.json
+prospector.db
+__pycache__/
+*.pyc
+.playwright-mcp/
+.vscode/
+node_modules/

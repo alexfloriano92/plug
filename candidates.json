@@ -1,0 +1,45 @@
+{
+  "nutricionistas": [],
+  "psicólogos": [
+    {
+      "nome": "André Paiva - Psicólogo",
+      "nota": 5.0,
+      "avaliacoes": 80,
+      "site": "http://andrepaivapsi.wixsite.com/andrepaivapsi/",
+      "telefone": "(35) 99935-9470",
+      "endereco": "Tv. Evaristo da Veiga, 40 - Centro, Pouso Alegre - MG, 37550-112",
+      "maps_url": "https://www.google.com/maps/place/Andr%C3%A9+Paiva+-+Psic%C3%B3logo/data=!4m7!3m6!1s0x94cbc7b0897d6e83:0x2a3887e5aaef7a43!8m2!3d-22.2330723!4d-45.9333126!16s%2Fg%2F11dxsl49qq!19sChIJg259ibDHy5QRQ3rvquWHOCo?authuser=0&hl=pt-BR&rclk=1"
+    }
+  ],
+  "dentistas": [
+    {
+      "nome": "Maria Eduarda Hamilton - Odontologia, Tratamento do Sono e Estética Facial",
+      "nota": 4.9,
+      "avaliacoes": 208,
+      "site": "https://www.eduardahamilton.com.br/",
+      "telefone": "(35) 99912-0069",
+      "whatsapp": "5535999120069",
+      "email": "odontomariaeduardahamilton@gmail.com",
+      "endereco": "Av. Vicente Simões, 793 - Nova Pouso Alegre, Pouso Alegre - MG, 37550-136",
+      "maps_url": "https://www.google.com/maps/place/Maria+Eduarda+Hamilton+-+Odontologia,+Tratamento+do+Sono+e+Est%C3%A9tica+Facial/data=!4m7!3m6!1s0x94cbc714089bf807:0x768eeb3742b5c7c6!8m2!3d-22.2276294!4d-45.9265721!16s%2Fg%2F11p4n4lyrv!19sChIJB_ibCBTHy5QRxse1QjfrjnY?authuser=0&hl=pt-BR&rclk=1",
+      "motivo": "hospedado no Wix gratuito; sem prova social/depoimentos"
+    }
+  ],
+  "clínicas de estética": [],
+  "academias": [],
+  "psicologos": [
+    {
+      "nome": "Psicóloga Raíssa Souza",
+      "nota": 5.0,
+      "avaliacoes": 51,
+      "site": "https://raissasouza.com.br/",
+      "telefone": "(35) 99834-3422",
+      "whatsapp": "5535998343422",
+      "email": "contato@raissasouza.com.br",
+      "endereco": "Clínica de Psicologia - R. Prof. Vicente Paiva Martins - Santa Luzia, Pouso Alegre - MG, 37551-083",
+      "maps_url": "https://www.google.com/maps/place/Psic%C3%B3loga+Ra%C3%ADssa+Souza/data=!4m7!3m6!1s0x94cbc7200825d157:0x812095e2647ecfd6!8m2!3d-22.2289521!4d-45.9408066!16s%2Fg%2F11h7n13h43!19sChIJV9ElCCDHy5QR1s9-ZOKVIIE?authuser=0&hl=pt-BR&rclk=1",
+      "motivo": "sem prova social/depoimentos"
+    }
+  ],
+  "clinicas de estetica": []
+}

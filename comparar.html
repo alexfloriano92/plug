@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- Comparador de sites -->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparador — Antes vs Depois</title>
+<style>
+  :root{--bg:#0f1420;--card:#1a2130;--ink:#e8ecf4;--muted:#8a97ad;--line:#2a3346;--old:#ef4444;--new:#22c55e;--blue:#3b82f6}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,'Segoe UI',Roboto,sans-serif;padding:20px;min-height:100vh}
+  h1{font-size:22px;margin:0 0 16px}
+  .notice{display:flex;align-items:flex-start;gap:12px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:12px;padding:14px 18px;margin-bottom:20px;font-size:13px;color:var(--muted);line-height:1.5}
+  .notice svg{flex-shrink:0;width:18px;height:18px;margin-top:1px;color:var(--blue);opacity:.7}
+  .notice span{flex:1}
+  .notice strong{color:var(--ink);font-weight:600}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .tab{background:var(--card);border:1px solid var(--line);color:var(--ink);padding:9px 16px;border-radius:10px;cursor:pointer;font-size:14px;font-weight:600}
+  .tab.on{background:var(--blue);border-color:var(--blue);color:#fff}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:900px){.cols{grid-template-columns:1fr}}
+  .col{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .chead{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--line);font-size:13px;font-weight:700}
+  .chead .lb{display:flex;align-items:center;gap:8px}
+  .dot{width:10px;height:10px;border-radius:50%}
+  .dot.o{background:var(--old)} .dot.n{background:var(--new)}
+  .chead a{color:#22d3ee;text-decoration:none;font-weight:600;font-size:12px}
+  .chead a:hover{text-decoration:underline}
+  iframe{width:100%;height:72vh;border:0;background:#fff;display:block}
+  .empty{height:72vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted);text-align:center;padding:20px}
+  .empty strong{color:var(--old);font-size:17px}
+  .hint{color:var(--muted);font-size:12px;margin-top:14px;display:flex;align-items:center;gap:6px}
+  .hint svg{width:14px;height:14px;opacity:.5}
+</style>
+</head>
+<body>
+<h1>Antes vs Depois</h1>
+<div class="notice">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+  <span><strong>Esquerda:</strong> site atual do cliente · <strong>Direita:</strong> nova versão profissional. Caso o site atual não carregue no iframe (alguns servidores bloqueiam incorporação), use o link <em>"abrir em nova aba ↗"</em> acima de cada painel.</span>
+</div>
+<div class="tabs" id="tabs"></div>
+<div class="cols">
+  <div class="col">
+    <div class="chead"><span class="lb"><span class="dot o"></span>SITE ATUAL</span><a id="oldlink" href="#" target="_blank" rel="noopener">abrir em nova aba ↗</a></div>
+    <div id="oldwrap"></div>
+  </div>
+  <div class="col">
+    <div class="chead"><span class="lb"><span class="dot n"></span>NOVA VERSÃO</span><a id="newlink" href="#" target="_blank" rel="noopener">abrir em nova aba ↗</a></div>
+    <div id="newwrap"></div>
+  </div>
+</div>
+<p class="hint"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Para editar textos e imagens, abra o arquivo <b>[cliente]-editor.html</b> na pasta sites/.</p>
+<script>
+var CLIENTES=[{"nome": "Maria Eduarda Hamilton", "slug": "maria-eduarda-hamilton", "old": "https://www.eduardahamilton.com.br/"}];
+var tabs=document.getElementById('tabs');
+CLIENTES.forEach(function(c,i){
+  var b=document.createElement('button');b.className='tab'+(i===0?' on':'');b.textContent=c.nome;
+  b.onclick=function(){document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on')});b.classList.add('on');mostra(c)};
+  tabs.appendChild(b);
+});
+function mostra(c){
+  var ow=document.getElementById('oldwrap'),nw=document.getElementById('newwrap');
+  var ol=document.getElementById('oldlink'),nl=document.getElementById('newlink');
+  var novo='sites/'+c.slug+'/'+c.slug+'.html';
+  nw.innerHTML='<iframe src="'+novo+'"></iframe>';nl.href=novo;
+  if(c.old){ow.innerHTML='<iframe src="'+c.old+'"></iframe>';ol.href=c.old;ol.style.display='inline'}
+  else{ow.innerHTML='<div class="empty"><strong>Sem site para comparar</strong><span>'+(c.motivo||'')+'</span></div>';ol.style.display='none'}
+}
+if(CLIENTES.length)mostra(CLIENTES[0]);
+</script>
+</body>
+</html>
+

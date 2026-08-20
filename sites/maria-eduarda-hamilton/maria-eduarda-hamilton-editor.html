@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Maria Eduarda Hamilton | Odontologia e Estética Facial em Pouso Alegre</title>
+    <meta name="description" content="Odontologia de excelência, tratamento de canal e estética facial em Pouso Alegre. Atendimento humanizado e tecnologia de última geração.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Colors based on original site */
+            --color-primary: #97c0e8; /* Soft blue */
+            --color-primary-dark: #7aaccf;
+            --color-dark: #1a1a1a;
+            --color-gray: #4a4a4a;
+            --color-light-gray: #f5f7fa;
+            --color-white: #ffffff;
+            
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            
+            /* Spacing & Sizes */
+            --container-width: 1200px;
+            --radius-md: 12px;
+            --radius-lg: 24px;
+            --shadow-sm: 0 4px 24px rgba(0,0,0,0.06);
+            --shadow-md: 0 12px 32px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-gray);
+            line-height: 1.6;
+            background-color: var(--color-light-gray);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--color-dark);
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-dark);
+            box-shadow: 0 4px 14px rgba(151, 192, 232, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(151, 192, 232, 0.5);
+        }
+
+        /* HEADER */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 24px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 90px;
+            object-fit: contain;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            background-color: var(--color-white);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.3) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 600px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-dark);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 5vw, 64px);
+            margin-bottom: 24px;
+            color: var(--color-dark);
+        }
+
+        .hero h1 span {
+            color: var(--color-primary-dark);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: var(--color-gray);
+            font-weight: 400;
+            max-width: 500px;
+        }
+
+        .hero-trust {
+            margin-top: 48px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .stars {
+            color: #fbbc04;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        .trust-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-dark);
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            background-color: var(--color-light-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+            max-width: 700px;
+            margin-inline: auto;
+        }
+
+        .section-header h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 16px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: var(--color-white);
+            padding: 48px 32px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+            border-top-color: var(--color-primary);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background-color: rgba(151, 192, 232, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--color-primary-dark);
+        }
+
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            font-family: var(--font-body);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            margin-bottom: 32px;
+            flex-grow: 1;
+        }
+        
+        .service-card .link {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-card .link svg {
+            width: 16px;
+            height: 16px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .link svg {
+            transform: translateX(4px);
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background-color: var(--color-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background-color: var(--color-light-gray);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            position: relative;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            color: rgba(151, 192, 232, 0.3);
+            width: 48px;
+            height: 48px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--color-dark);
+            font-family: var(--font-heading);
+            font-size: 20px;
+        }
+
+        .author-info h4 {
+            font-size: 16px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .author-info span {
+            font-size: 14px;
+            color: var(--color-primary-dark);
+        }
+
+        /* ABOUT */
+        .about {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            padding: 120px 0;
+        }
+
+        .about .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/5;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            color: var(--color-white);
+            margin-bottom: 24px;
+            font-size: clamp(32px, 4vw, 48px);
+        }
+
+        .about-content h2 span {
+            color: var(--color-primary);
+            font-style: italic;
+        }
+
+        .about-content p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 24px;
+            font-size: 18px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat h3 {
+            color: var(--color-primary);
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+        
+        .stat p {
+            font-size: 14px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CONTACT & MAP */
+        .contact {
+            background-color: var(--color-light-gray);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-info {
+            padding: 64px;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 40px;
+            font-size: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--color-light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--color-primary-dark);
+        }
+
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .contact-details h4 {
+            font-family: var(--font-body);
+            font-size: 18px;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .contact-details p {
+            font-size: 16px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #111;
+            color: rgba(255,255,255,0.5);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer-logo {
+            height: 56px;
+            margin-bottom: 24px;
+            opacity: 0.8;
+            filter: brightness(0) invert(1);
+        }
+
+        /* FAB WHATSAPP */
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 64px;
+            height: 64px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .fab-whatsapp svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .fab-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .about .container, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+                aspect-ratio: 16/9;
+            }
+            .hero-overlay {
+                background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 70%, rgba(255,255,255,0.7) 100%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 80px 0; }
+            .contact-info { padding: 40px 24px; }
+            .hero { padding-top: 120px; text-align: center; justify-content: center; }
+            .hero-overlay { background: rgba(255,255,255,0.9); }
+            .hero-content { margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+            .hero-trust { justify-content: center; }
+            .btn { width: 100%; }
+        }
+
+        /* FRAUD ALERT MODAL */
+        .fa-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            cursor: pointer;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .fa-overlay.hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .fa-card {
+            background: #fff;
+            border-radius: 20px;
+            max-width: 520px;
+            width: 100%;
+            padding: 40px;
+            position: relative;
+            cursor: default;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+            animation: slideUp 0.4s ease;
+            text-align: center;
+        }
+
+        .fa-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: var(--color-light-gray);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            color: var(--color-gray);
+        }
+
+        .fa-close:hover {
+            background: #e5e7eb;
+            transform: rotate(90deg);
+        }
+
+        .fa-close svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .fa-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .fa-badge svg {
+            width: 32px;
+            height: 32px;
+            color: #d97706;
+        }
+
+        .fa-card h3 {
+            font-family: var(--font-body);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .fa-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--color-gray);
+            margin-bottom: 0;
+        }
+
+        .fa-card p b {
+            color: var(--color-dark);
+            font-weight: 600;
+        }
+
+        .fa-card .fa-dismiss {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 10px 28px;
+            background: var(--color-dark);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .fa-card .fa-dismiss:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-content">
+            <img src="https://static.wixstatic.com/media/f958ef_13850952437e4852a2bc59e1453045ec~mv2.png/v1/crop/x_0,y_178,w_500,h_142/fill/w_313,h_90,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Design%20sem%20nome%20(1).png" alt="Maria Eduarda Hamilton Logo" class="logo">
+        </div>
+    </header>
+
+    <!-- FRAUD ALERT POPUP -->
+    <div class="fa-overlay" id="fraudPopup" onclick="this.classList.add('hidden')">
+        <div class="fa-card" onclick="event.stopPropagation()">
+            <button class="fa-close" onclick="document.getElementById('fraudPopup').classList.add('hidden')" aria-label="Fechar">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div class="fa-badge">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
+            </div>
+            <h3>Alerta de Fraude</h3>
+            <p>Nós da Clínica Maria Eduarda Hamilton <b>NÃO</b> possuímos parceria com SUS para implantes.</p>
+            <p>Caso você veja algum anúncio em nome de nossa clínica ofertando implantes de graça pelo SUS, não forneça seus dados pessoais e <b>denuncie</b>!</p>
+            <button class="fa-dismiss" onclick="document.getElementById('fraudPopup').classList.add('hidden')">Entendi</button>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="https://static.wixstatic.com/media/f958ef_9e759bdc3264438281b884610fae4985~mv2.jpg/v1/fill/w_1280,h_657,al_t,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/f958ef_9e759bdc3264438281b884610fae4985~mv2.jpg" alt="Consultório Odontológico" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">Odontologia & Estética Facial</div>
+                <h1>O seu sorriso merece <span>excelência</span> e cuidado humanizado.</h1>
+                <p>Tecnologia de última geração e tratamentos sem dor no centro de Pouso Alegre. Recupere sua confiança com quem é referência em saúde bucal.</p>
+                <a href="https://wa.me/5535999120069?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-primary" target="_blank">Agendar Minha Avaliação</a>
+                
+                <div class="hero-trust">
+                    <div class="stars">★★★★★</div>
+                    <div class="trust-text"><strong>4.9/5.0</strong> (208 avaliações reais)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cuidado completo para a sua <i>saúde e estética</i></h2>
+                <p>Procedimentos seguros e avançados focados em resolver a sua dor e devolver a harmonia ao seu rosto.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3>Estética Facial</h3>
+                    <p>Realce sua beleza natural com procedimentos avançados de harmonização. Resultados sutis que devolvem jovialidade e confiança ao seu rosto.</p>
+                    <a href="https://wa.me/5535999120069?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Est%C3%A9tica%20Facial." class="link" target="_blank">Saber mais <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3>Endodontia (Canal)</h3>
+                    <p>Acabe com a dor de forma rápida e segura. Utilizamos tecnologia de ponta para realizar o tratamento de canal com o máximo de conforto, sem traumas.</p>
+                    <a href="https://wa.me/5535999120069?text=Ol%C3%A1!%20Estou%20com%20dor%20e%20preciso%20saber%20sobre%20tratamento%20de%20canal." class="link" target="_blank">Atendimento rápido <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3>Odontologia Especializada</h3>
+                    <p>Prevenção e tratamentos clínicos gerais. Preparada para atender pacientes com necessidades especiais (como portadores de Osteogênese Imperfeita) com todo respeito.</p>
+                    <a href="https://wa.me/5535999120069?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20cl%C3%ADnica." class="link" target="_blank">Agendar consulta <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section about">
+        <div class="container">
+            <div class="about-image">
+                <img src="https://static.wixstatic.com/media/f958ef_9e759bdc3264438281b884610fae4985~mv2.jpg/v1/fill/w_1280,h_657,al_t,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/f958ef_9e759bdc3264438281b884610fae4985~mv2.jpg" alt="Dra. Maria Eduarda Hamilton">
+            </div>
+            <div class="about-content">
+                <h2>Uma doutora <span>competente</span> e um atendimento <span>humanizado</span>.</h2>
+                <p>Nossa missão é transformar a ida ao dentista em uma experiência tranquila e livre de medos. Combinamos técnica avançada, estrutura moderna e, acima de tudo, empatia com a sua história.</p>
+                <p>Acreditamos que todo paciente merece clareza em seu diagnóstico e um plano de tratamento personalizado que respeite seus limites e desejos.</p>
+                
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>+200</h3>
+                        <p>Avaliações Positivas</p>
+                    </div>
+                    <div class="stat">
+                        <h3>100%</h3>
+                        <p>Foco no Paciente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que dizem nossos <i>pacientes</i></h2>
+                <p>Mais de 208 avaliações nota 4.9 no Google Maps. A confiança de quem já transformou o sorriso conosco.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <svg class="quote-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="testimonial-text">"Tive que fazer tratamento de canal urgente e a Dra. me explicou tudo com muita clareza! O procedimento foi super tranquilo, sem dor nenhuma. Excelente profissional, recomendo de olhos fechados!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">B</div>
+                        <div class="author-info">
+                            <h4>B. G.</h4>
+                            <span>Paciente Satisfeito</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <svg class="quote-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="testimonial-text">"Uma Doutora competente, responsável, tecnologia de última geração. Sou portador de Osteogênese Imperfeita, e recebo tratamento humanizado. Pode acreditar que foi excelente conhecer o profissionalismo nota 1000."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">V</div>
+                        <div class="author-info">
+                            <h4>V. A.</h4>
+                            <span>Paciente Satisfeito</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <svg class="quote-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="testimonial-text">"Clínica com ótima estrutura, excelente como pessoa e profissional, tratamento de qualidade e excelência! Recomendo!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>A. E.</h4>
+                            <span>Paciente Satisfeito</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / MAP -->
+    <section class="section contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Venha <i>nos visitar</i></h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Endereço</h4>
+                            <p>Av. Vicente Simões, 793<br>Nova Pouso Alegre<br>Pouso Alegre - MG</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Contato</h4>
+                            <p>(35) 99912-0069<br>odontomariaeduardahamilton@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <a href="https://wa.me/5535999120069?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." class="btn btn-primary" target="_blank">Agendar pelo WhatsApp</a>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3699.28828069695!2d-45.92657210000001!3d-22.2276294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cbc714089bf807%3A0x768eeb3742b5c7c6!2sMaria%20Eduarda%20Hamilton%20-%20Odontologia%2C%20Tratamento%20do%20Sono%20e%20Est%C3%A9tica%20Facial!5e0!3m2!1spt-BR!2sbr!4v1716300000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <img src="https://static.wixstatic.com/media/f958ef_13850952437e4852a2bc59e1453045ec~mv2.png/v1/crop/x_0,y_178,w_500,h_142/fill/w_313,h_90,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Design%20sem%20nome%20(1).png" alt="Logo Footer" class="footer-logo">
+            <p>&copy; 2024 Dra. Maria Eduarda Hamilton. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- FAB -->
+    <a href="https://wa.me/5535999120069?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="fab-whatsapp" target="_blank" aria-label="Fale conosco no WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 3.825.001 6.938 3.113 6.939 6.938-.001 3.825-3.114 6.938-6.939 6.942z"/></svg>
+    </a>
+
+
+<!-- PROSPECTOR-EDITOR-START -->
+<style id="pe-style">
+#pe-bar{position:fixed;top:0;left:0;right:0;z-index:99999;background:#111;color:#fff;font:14px/1 -apple-system,Segoe UI,Roboto,sans-serif;display:flex;align-items:center;gap:16px;padding:10px 16px;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+#pe-bar button{background:#22c55e;color:#fff;border:0;border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer}
+#pe-bar button:hover{background:#16a34a}
+body{margin-top:44px !important}
+.pe-hover{outline:2px dashed #22c55e !important;outline-offset:2px;cursor:pointer}
+[contenteditable="true"]:focus{outline:2px solid #3b82f6 !important;outline-offset:2px}
+</style>
+<div id="pe-bar">
+  <strong>Modo edição</strong>
+  <span>Clique em textos para editar · clique em imagens para trocar</span>
+  <button id="pe-export" type="button">Exportar página</button>
+</div>
+<input type="file" id="pe-file" accept="image/*" style="display:none">
+<script id="pe-script">
+(function(){
+  var TEXT='h1,h2,h3,h4,h5,h6,p,li,a,span,button,td,th,figcaption,blockquote,strong,em';
+  document.querySelectorAll(TEXT).forEach(function(el){
+    if(el.closest('#pe-bar'))return;
+    if(el.children.length===0||el.childElementCount<=1){
+      el.addEventListener('click',function(e){
+        if(el.tagName==='A'||el.tagName==='BUTTON')e.preventDefault();
+        el.setAttribute('contenteditable','true');el.focus();
+      });
+      el.addEventListener('mouseenter',function(){el.classList.add('pe-hover')});
+      el.addEventListener('mouseleave',function(){el.classList.remove('pe-hover')});
+      el.addEventListener('blur',function(){el.removeAttribute('contenteditable')});
+    }
+  });
+  var fileInput=document.getElementById('pe-file'),currentImg=null;
+  document.querySelectorAll('img').forEach(function(img){
+    img.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();currentImg=img;fileInput.click()});
+    img.addEventListener('mouseenter',function(){img.classList.add('pe-hover')});
+    img.addEventListener('mouseleave',function(){img.classList.remove('pe-hover')});
+  });
+  fileInput.addEventListener('change',function(){
+    var f=fileInput.files[0];if(!f||!currentImg)return;
+    var r=new FileReader();
+    r.onload=function(){currentImg.src=r.result;if(currentImg.srcset)currentImg.removeAttribute('srcset')};
+    r.readAsDataURL(f);fileInput.value='';
+  });
+  document.getElementById('pe-export').addEventListener('click',function(){
+    var doc=document.documentElement.cloneNode(true);
+    ['#pe-bar','#pe-style','#pe-script','#pe-file'].forEach(function(s){var n=doc.querySelector(s);if(n)n.remove()});
+    doc.querySelectorAll('[contenteditable]').forEach(function(n){n.removeAttribute('contenteditable')});
+    doc.querySelectorAll('.pe-hover').forEach(function(n){n.classList.remove('pe-hover')});
+    var html='<!DOCTYPE html>\n'+doc.outerHTML;
+    var blob=new Blob([html],{type:'text/html'});
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='index.html';a.click();
+  });
+})();
+</script>
+<!-- PROSPECTOR-EDITOR-END -->
+</body>
+
+</html>
