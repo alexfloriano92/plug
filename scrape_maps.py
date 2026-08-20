@@ -19,9 +19,11 @@ with open(CONFIG_PATH, "r", encoding="utf-8") as f:
 
 cidade = config["prospeccao"]["cidade"]
 nichos = config["prospeccao"]["nichos"]
-leads_por_busca = config["prospeccao"].get("leadsPorBusca", 10)
+leads_por_busca = 3
 
-search_queries = [f"{n} em {cidade}" for n in nichos]
+# Run only 1 niche at a time for reliability
+NICHO_ATUAL = "clínica médica"
+search_queries = [f"{NICHO_ATUAL} em {cidade}"]
 
 MIN_RATING = 4.7
 MIN_REVIEWS = 40
@@ -323,6 +325,9 @@ def run():
             
             limit = min(25, total)
             for i in range(limit):
+                if len(qualified) >= 3:
+                    print("\n  Encontrados 3 qualificados. Parando a busca.")
+                    break
                 try:
                     # Re-query in case DOM changed
                     place_links = page.locator("a[href*='/maps/place/']")
@@ -353,11 +358,11 @@ def run():
                     print(f"      Nota: {rating} | Avaliações: {reviews} | Site: {website[:50] if website else 'N/A'}")
                     
                     # --- FILTRO 1: Potencial financeiro ---
-                    if rating < MIN_RATING or reviews < MIN_REVIEWS:
-                        reason = f"nota {rating}, {reviews} avaliações (mín: {MIN_RATING}/{MIN_REVIEWS})"
-                        print(f"      ✗ REPROVADO (Filtro 1 - potencial): {reason}")
-                        discarded.append({"nome": name, "motivo": reason})
-                        continue
+                    # if rating < MIN_RATING or reviews < MIN_REVIEWS:
+                    #     reason = f"nota {rating}, {reviews} avaliações (mín: {MIN_RATING}/{MIN_REVIEWS})"
+                    #     print(f"      ✗ REPROVADO (Filtro 1 - potencial): {reason}")
+                    #     discarded.append({"nome": name, "motivo": reason})
+                    #     continue
                     
                     # --- FILTRO 2: Tem site próprio ---
                     if not website:

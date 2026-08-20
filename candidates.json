@@ -41,5 +41,43 @@
       "motivo": "sem prova social/depoimentos"
     }
   ],
-  "clinicas de estetica": []
+  "clinicas de estetica": [],
+  "clínica médica": [
+    {
+      "nome": "Medical Center Pouso Alegre",
+      "nota": 4.0,
+      "avaliacoes": 0,
+      "site": "http://www.medicalcenterpa.com.br/",
+      "telefone": "(35) 3647-3550",
+      "whatsapp": "",
+      "email": "rh@medicalcenterpa.com.br",
+      "endereco": "R. Cel. Brito Filho, 469/461 - Fatima, Pouso Alegre - MG, 37554-246",
+      "maps_url": "https://www.google.com/maps/place/Medical+Center+Pouso+Alegre/data=!4m7!3m6!1s0x94cbc75b168493f9:0x158afce3b4af2b76!8m2!3d-22.2244783!4d-45.9234468!16s%2Fg%2F11r43yds78!19sChIJ-ZOEFlvHy5QRdiuvtOP8ihU?authuser=0&hl=pt-BR&rclk=1",
+      "motivo": "hospedado no Wix gratuito"
+    },
+    {
+      "nome": "Clínicas Doctor Já",
+      "nota": 4.0,
+      "avaliacoes": 0,
+      "site": "http://www.clinicasdoctorja.com.br/",
+      "telefone": "(35) 3425-8917",
+      "whatsapp": "5535992452018",
+      "email": "contato@clinicasdoctorja.com.br",
+      "endereco": "R. Silviano Brandão, 26 - Centro, Pouso Alegre - MG, 37550-000",
+      "maps_url": "https://www.google.com/maps/place/Cl%C3%ADnicas+Doctor+J%C3%A1/data=!4m7!3m6!1s0x94cbc7b4f53dba01:0x1228036aa96372b5!8m2!3d-22.2319118!4d-45.9397917!16s%2Fg%2F11f5bx59g8!19sChIJAbo99bTHy5QRtXJjqWoDKBI?authuser=0&hl=pt-BR&rclk=1",
+      "motivo": "hospedado no Wix gratuito"
+    },
+    {
+      "nome": "Vacinas São Bento - Clínica de Vacinas Particular",
+      "nota": 4.0,
+      "avaliacoes": 0,
+      "site": "http://www.vacinassaobento.com.br/",
+      "telefone": "(35) 99103-5121",
+      "whatsapp": "5535991035121",
+      "email": "clinica.saobento@yahoo.com.br",
+      "endereco": "R. Cel. Otávio Meyer, 81 - Centro, Pouso Alegre - MG, 37550-067",
+      "maps_url": "https://www.google.com/maps/place/Vacinas+S%C3%A3o+Bento+-+Cl%C3%ADnica+de+Vacinas+Particular/data=!4m7!3m6!1s0x94cbc7e2e2ab89b3:0x2a92a687a108abd8!8m2!3d-22.2299075!4d-45.9389377!16s%2Fg%2F11hdrwtv5r!19sChIJs4mr4uLHy5QR2KsIoYemkio?authuser=0&hl=pt-BR&rclk=1",
+      "motivo": "site funcional mas passível de melhoria"
+    }
+  ]
 }
